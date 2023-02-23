@@ -20,10 +20,6 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-    - name: cd
-      run: cd ./src
-    - name: ls
-      run: pwd && ls 
       
       
     - name: Restore dependencies
@@ -31,6 +27,8 @@ jobs:
     - name: Build
       run: cd ./src && dotnet build --no-restore
     - name: Build
-      run: ls
+      run: cd ./src && dotnet publish -c Release -o /publish
+    - name: Show List
+      run: ls && cd ./publish && ls
     - name: Test
       run: dotnet test --no-build --verbosity normal
