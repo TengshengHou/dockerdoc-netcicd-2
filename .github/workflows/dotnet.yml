@@ -30,6 +30,8 @@ jobs:
       run: mkdir /publish
     - name: Publish
       run: cd ./src && dotnet publish -c Release -o /publish
+    - name: Change directory permissions
+      run: chmod 777 /publish
     - name: Show List
       run: ls && cd ./publish && ls
     - name: Test
