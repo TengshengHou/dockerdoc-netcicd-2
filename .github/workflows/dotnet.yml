@@ -27,5 +27,5 @@ jobs:
     - name: Publish
       run: cd ./src && dotnet publish -c Release 
     - name: Show List
-      run: ls && cd /src/bin/Release/net6.0/publish/ && ls
+      run: ls && cd ./src/bin/Release/net6.0/publish/ && ls
 
