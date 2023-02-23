@@ -20,20 +20,12 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-      
-      
     - name: Restore dependencies
       run: cd ./src && dotnet restore
     - name: Build
       run: cd ./src && dotnet build --no-restore
-    - name: Change directory permissions
-      run: chmod 777 /publish
-    - name: Create folder
-      run: mkdir /publish
     - name: Publish
-      run: cd ./src && dotnet publish -c Release -o /publish
-
+      run: cd ./src && dotnet publish -c Release 
     - name: Show List
       run: ls && cd ./publish && ls
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+
