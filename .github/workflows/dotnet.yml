@@ -23,7 +23,7 @@ jobs:
     - name: cd
       run: cd ./src
     - name: ls
-      run: ls
+      run: pwd && ls 
       
       
     - name: Restore dependencies
