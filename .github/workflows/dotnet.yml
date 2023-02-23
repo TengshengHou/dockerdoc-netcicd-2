@@ -27,9 +27,9 @@ jobs:
       
       
     - name: Restore dependencies
-      run: cd ../ && dotnet restore
+      run: cd ./src && dotnet restore
     - name: Build
-      run: cd ../ && dotnet build --no-restore
+      run: cd ./src && dotnet build --no-restore
     - name: Build
       run: ls
     - name: Test
