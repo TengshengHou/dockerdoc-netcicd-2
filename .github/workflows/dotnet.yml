@@ -26,7 +26,9 @@ jobs:
       run: cd ./src && dotnet restore
     - name: Build
       run: cd ./src && dotnet build --no-restore
-    - name: Build
+    - name: Create folder
+      run: mkdir /publish
+    - name: Publish
       run: cd ./src && dotnet publish -c Release -o /publish
     - name: Show List
       run: ls && cd ./publish && ls
